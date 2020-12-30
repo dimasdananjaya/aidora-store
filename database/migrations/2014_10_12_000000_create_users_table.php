@@ -22,6 +22,31 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->timestamps();
         });
+
+        Schema::create('product_type', function (Blueprint $table) {
+            $table->bigIncrements('id_type');
+            $table->string('type');
+            $table->timestamps();
+        });
+
+        Schema::create('products', function (Blueprint $table) {
+            $table->bigIncrements('id_product');
+            $table->unsignedBigInteger('id_type');
+            $table->string('product_name');
+            $table->string('price');
+            $table->string('description');
+            $table->timestamps();
+
+            $table->foreign('id_type')->references('id_type')->on('product_type');
+        });
+
+        Schema::create('product_images', function (Blueprint $table) {
+            $table->bigIncrements('id_image');
+            $table->unsignedBigInteger('id_product');
+            $table->timestamps();
+
+            $table->foreign('id_product')->references('id_product')->on('products');
+        });
     }
 
     /**

@@ -51,7 +51,7 @@
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm no-gutter">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img height="80" width="80"  src="resources/logo/aidora-logo.png" alt="image">
+                    <img height="80" width="80"  src="resources/logo/aidora-logo.png" alt="image" width="90" height="90">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -65,19 +65,22 @@
                     -->
                     <ul class="navbar-nav text-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Woman Fashion</a>
+                            <a class="nav-link" href="#"><b>Woman Fashion</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Woman Bag</a>
+                            <a class="nav-link" href="#"><b>Woman Bag</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Accessories</a>
+                            <a class="nav-link" href="#"><b>Accessories</b></a>
                         </li>
                     </ul>
-                    <!-- Right Side Of Navbar
-                    <ul class="navbar-nav ml-auto">
+
+                    <ul class="navbar-nav ml-auto text-center">
+                        <a href="#" class="mx-2"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                        <a href="#" class="mx-2"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="#" class="mx-2"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+                        <a href="#" class="mx-2"><i class="fab fa-google" aria-hidden="true"></i></a>
                     </ul>
-                    -->
                 </div>
             </div>
         </nav>
@@ -89,18 +92,18 @@
             <div class="container">
                 <div class="row text-center align-items-center">
                 <div class="col-12 col-sm-6 col-md-4 text-sm-left">
-                    <img alt="image" src="images/logo/fat-cat-logo.png" height="40">
+                    <img alt="image" class="logo" src="resources/logo/aidora-logo.png" height="90" width="90">
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-right text-md-center">
-                    © 2020 fat.cat
+                    <p>© 2020 aidorastore.com</p>
                 </div>
 
                 <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-right">
-                    <a href="https://www.froala.com" class="mx-2"><i class="fab fa-facebook" aria-hidden="true"></i></a>
-                    <a href="https://www.froala.com" class="mx-2"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="https://www.froala.com" class="mx-2"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
-                    <a href="https://www.froala.com" class="mx-2"><i class="fab fa-google" aria-hidden="true"></i></a>
+                    <a href="#" class="mx-2"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                    <a href="#" class="mx-2"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="#" class="mx-2"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
+                    <a href="#" class="mx-2"><i class="fab fa-google" aria-hidden="true"></i></a>
                 </div>
                 </div>
             </div>
@@ -109,8 +112,6 @@
     <!-- Optional JavaScript -->
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-
     <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/4f161c1c95.js" crossorigin="anonymous"></script>
@@ -120,7 +121,7 @@
     <script>
         $(".newly-arrived-carousel").slick({
                     arrows: true,
-                    infinite: false,
+                    infinite: true,
                     speed: 150,
                     dots: true,
                     autoplay: true,

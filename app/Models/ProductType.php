@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class ProductsModel extends Model
+class ProductType extends Model
 {
     use HasFactory;
 
-    protected $table = 'products';
+    protected $table = 'product_type';
     public $timestamps = true;
-    public $primaryKey='id_products';
+    public $primaryKey='id_type';
     protected $guarded = [];
 
 }

@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\ProductsMode;
+use App\Models\ProductType;
+use DB;
 
 class ProductsController extends Controller
 {
@@ -13,7 +16,16 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+
+        $dataTipe=ProductType::all();
+        $dataProduct=DB::table('products')
+        ->join('product_type', 'product_type.id_type', '=', 'products.id_type')
+        ->select('products.*','product_type.type')  
+        ->orderBy('id_type','ASC')->get();
+
+        return view('admin.products')
+        ->with('dataTipe',$dataTipe)
+        ->with('dataProduct',$dataProduct);
     }
 
     /**

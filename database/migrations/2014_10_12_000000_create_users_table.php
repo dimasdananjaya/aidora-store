@@ -33,7 +33,8 @@ class CreateUsersTable extends Migration
             $table->bigIncrements('id_product');
             $table->unsignedBigInteger('id_type');
             $table->string('product_name');
-            $table->string('price');
+            $table->decimal('sell_price');
+            $table->decimal('base_price');
             $table->string('description');
             $table->timestamps();
 

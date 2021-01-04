@@ -19,7 +19,7 @@
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Data Product</b></h5>
+                            <h5 class="modal-title" id="exampleModalLabel"><b>Tambah Product</b></h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -29,8 +29,8 @@
                                 {{Form::label('Product Name :')}}
                                 {{Form::text('product_name','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                 {{Form::label('id_type','Tipe :')}}
-                                <select name="id_toko" class="form-control form-group">
-                                    @foreach ($dataTipe as $dtt)
+                                <select name="id_type" class="form-control form-group">
+                                    @foreach ($dataType as $dtt)
                                         <option value="{{$dtt->id_type}}" class="form-control">{{$dtt->type}}</option>
                                     @endforeach
                                 </select>
@@ -51,6 +51,7 @@
                     <thead>
                         <th>Product ID</th>
                         <th>Product Name</th>
+                        <th>Product Type</th>
                         <th>Base Price</th>
                         <th>Sell Price</th>
                         <th>Description</th>
@@ -61,6 +62,7 @@
                             <tr>
                                 <td>{{$dp->id_product}}</td>
                                 <td>{{$dp->product_name}}</td>
+                                <td>{{$dp->type}}</td>
                                 <td>{{ number_format($dp->sell_price, 2) }}</td>
                                 <td>{{ number_format($dp->base_price, 2) }}</td>
                                 <td>{{$dp->description}}</td>
@@ -85,7 +87,7 @@
                                             {{Form::label('id_type','Tipe :')}}
                                             <select name="id_type" class="form-control form-group">
                                                 @foreach ($dataType as $dtt)
-                                                    @if ($db->id_toko == $dtt->id_type)
+                                                    @if ($dtt->id_type == $dp->id_type)
                                                         <option value="{{$dtt->id_type}}" class="form-control" selected>{{$dtt->type}}</option>
                                                     @else
                                                         <option value="{{ $dtt->id_type }}" class="form-control">{{ $dtt->type }}</option>
@@ -93,9 +95,9 @@
                                                 @endforeach
                                             </select>
                                             {{Form::label('Base Price :')}}
-                                            {{Form::text('base_price',$dp->base_price,['class'=>'form-control form-group uangBarang','placeholder'=>'','required'])}}
+                                            {{Form::text('base_price',$dp->base_price,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                             {{Form::label('Sell Price :')}}
-                                            {{Form::text('sell_price',$dp->sell_price,['class'=>'form-control form-group uangBarang','placeholder'=>'','required'])}}
+                                            {{Form::text('sell_price',$dp->sell_price,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                             {{Form::label('Desciption: ')}}
                                             {{Form::textarea('description','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                             {{Form::submit('Simpan',['class'=>'btn btn-success btn-block'])}}

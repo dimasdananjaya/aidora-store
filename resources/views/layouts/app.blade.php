@@ -13,6 +13,7 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/script.js')}}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -36,9 +37,6 @@
     <!--Sweet alert-->
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
-    <!--jquery ui-->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" defer>
 
     <script src="https://unpkg.com/@popperjs/core@2"></script>
     <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.8.2.min.js"></script>
@@ -85,9 +83,9 @@
             </div>
         </nav>
 
-   
+
         @yield('content')
-     
+        @include('sweetalert::alert')
         <footer class="fdb-block footer-small">
             <div class="container">
                 <div class="row text-center align-items-center">
@@ -110,8 +108,16 @@
         </footer>
 
     <!-- Optional JavaScript -->
-    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <!--for ajax-->
+    <script
+    src="https://code.jquery.com/jquery-3.5.1.min.js"
+    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+    crossorigin="anonymous" defer></script>
+    <script
+    src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+    integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+    crossorigin="anonymous" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js" defer></script>
     <script type="text/javascript" src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/4f161c1c95.js" crossorigin="anonymous"></script>
@@ -156,46 +162,6 @@
                     ]
                     });
         
-    </script>
-
-    <script>
-    $(".most-popular-carousel").slick({
-                arrows: true,
-                infinite: false,
-                speed: 150,
-                dots: true,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                slidesToShow: 4,
-                slidesToScroll: 3,
-                responsive: [{
-                    breakpoint: 1024,
-                    settings: {
-                    slidesToShow: 3,
-                    slidesToScroll: 3,
-                    infinite: true,
-                    arrows: true
-                    }
-                }, {
-                    breakpoint: 600,
-                    settings: {
-                    slidesToShow: 2,
-                    slidesToScroll: 2,
-                    arrows: true
-                    }
-                }, {
-                    breakpoint: 480,
-                    settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
-                    arrows: true
-                    }
-                } // You can unslick at a given breakpoint now by adding:
-                // settings: "unslick"
-                // instead of a settings object
-                ]
-                });
-    
     </script>
 </body>
 </html>

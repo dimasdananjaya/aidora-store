@@ -3,9 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\ProductsMode;
+use App\Models\ProductsModel;
 use App\Models\ProductType;
 use DB;
+use Validator;
 
 class ProductsController extends Controller
 {
@@ -17,14 +18,14 @@ class ProductsController extends Controller
     public function index()
     {
 
-        $dataTipe=ProductType::all();
+        $dataType=ProductType::all();
         $dataProduct=DB::table('products')
         ->join('product_type', 'product_type.id_type', '=', 'products.id_type')
         ->select('products.*','product_type.type')  
         ->orderBy('id_type','ASC')->get();
 
         return view('admin.products')
-        ->with('dataTipe',$dataTipe)
+        ->with('dataType',$dataType)
         ->with('dataProduct',$dataProduct);
     }
 
@@ -46,59 +47,29 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        $validator = Validator::make($request->all(), [
-            'id_user'=> 'required',
-            'id_periode'=> 'required',
-            'tanggal' => 'required',
-            'mata_kuliah'=> 'required',
-            'jam'=> 'required',
-            'sks'=> 'required',
-            'materi'=> 'required',
-            'file'=> 'required',
-        ]);
+        // validate
+        $rules = array(
 
+        );
+        $validator = Validator::make($request->all(), [$rules]);
 
+        // update barang
         if ($validator->fails()) {
-            Alert::error('Data BAP Gagal Disimpan!', 'Isi Formulir Dengan Benar');
-            return back();
-        }
-        elseif($request->hasFile('file')){
-            $image = $request->file('file');
-            $image_name = time() . '.' . $image->getClientOriginalExtension();
-            $id_periode=$request->input('id_periode');
-            $id_user=$request->input('id_user');
+            alert()->error('Gagal Disimpan !', $validator);
+            return redirect()->back();
+        } else {
+            // store
+            $dataProduct = new ProductsModel;
+            $dataProduct->id_type = $request->input('id_type');
+            $dataProduct->product_name = $request->input('product_name');
+            $dataProduct->sell_price = preg_replace('/\D/','',$request->input('sell_price'));
+            $dataProduct->base_price = preg_replace('/\D/','',$request->input('base_price'));
+            $dataProduct->description = $request->input('description');
+            
+            $dataProduct->save();
 
-            $destinationPath = storage_path('app/public/file/'.$id_periode.'/'.$id_user);
-
-            if(!File::exists($destinationPath)) {
-                File::makeDirectory($destinationPath);
-                Image::make($image->getRealPath())->resize(320,440)->save($destinationPath . '/' . $image_name);
-            }
-
-            else{
-                Image::make($image->getRealPath())->resize(320,440)->save($destinationPath . '/' . $image_name);
-            }
-
-            //$destinationPath = public_path('/resources/file');
-            //$path = $resize_image->storeAs(
-             //   'public/file', $name
-            //);
-            //$file->move($destinationPath, $name);
-
-            $bap = BAPModel::create([
-                'id_user' => $request->input('id_user'),
-                'id_periode' => $request->input('id_periode'),
-                'tanggal' => $request->input('tanggal'),
-                'mata_kuliah' => $request->input('mata_kuliah'),
-                'jam' => $request->input('jam'),
-                'sks' => $request->input('sks'),
-                'materi' => $request->input('materi'),
-                'jumlah_mahasiswa'=>$request->input('jumlah_mahasiswa'),
-                'file' => $image_name,
-            ]);
-
-            $bap->save();
-            Alert::success('Data BAP Berhasil Disimpan!');
+            // redirect
+            alert()->success('Data Tersimpan !', '');
             return back();
         }
     }
@@ -134,7 +105,32 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate
+        $rules = array(
+
+        );
+        $validator = Validator::make($request->all(), [$rules]);
+
+        // update barang
+        if ($validator->fails()) {
+            alert()->error('Gagal Disimpan !', $validator);
+            return redirect()->back();
+        } else {
+            // store
+            $dataProduct = ProductsModel::find($id);
+
+            $dataProduct->id_type = $request->input('id_type');
+            $dataProduct->product_name = $request->input('product_name');
+            $dataProduct->sell_price = preg_replace('/\D/','',$request->input('sell_price'));
+            $dataProduct->base_price = preg_replace('/\D/','',$request->input('base_price'));
+            $dataProduct->description = $request->input('description');
+            
+            $dataProduct->save();
+
+            // redirect
+            alert()->success('Data Diupdate !', '');
+            return back();
+        }
     }
 
     /**

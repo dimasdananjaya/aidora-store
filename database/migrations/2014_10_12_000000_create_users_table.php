@@ -36,6 +36,9 @@ class CreateUsersTable extends Migration
             $table->decimal('sell_price');
             $table->decimal('base_price');
             $table->string('description');
+            $table->string('status');
+            $table->string('instagram');
+            $table->string('whatsapp');
             $table->timestamps();
 
             $table->foreign('id_type')->references('id_type')->on('product_type');
@@ -44,6 +47,7 @@ class CreateUsersTable extends Migration
         Schema::create('product_images', function (Blueprint $table) {
             $table->bigIncrements('id_image');
             $table->unsignedBigInteger('id_product');
+            $table->int('orders');
             $table->timestamps();
 
             $table->foreign('id_product')->references('id_product')->on('products');

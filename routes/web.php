@@ -13,13 +13,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\RouteController::class, 'welcomePage'])->name('welcome');
 
 use App\Http\Controllers\ProductsController;
 Route::resource('/products', ProductsController::class);
+
+use App\Http\Controllers\ImagesProductController;
+Route::resource('/product-images', ImagesProductController::class);
+Route::get('/manage-images', [App\Http\Controllers\ImagesProductController::class,'manageProductImages'])->name('manage.product-images');

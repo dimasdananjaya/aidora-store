@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <section id="barang-dashboard">
@@ -56,6 +56,7 @@
                         <th>Sell Price</th>
                         <th>Description</th>
                         <th>Aksi</th>
+                        <th></th>
                     </thead>
                     <tbody>
                         @foreach ($dataProduct as $dp)
@@ -66,7 +67,15 @@
                                 <td>{{ number_format($dp->sell_price, 2) }}</td>
                                 <td>{{ number_format($dp->base_price, 2) }}</td>
                                 <td>{{$dp->description}}</td>
-                                <td><a class="btn btn-success" style="color:#fff;" data-toggle="modal" data-target="#edit-product-modal{{$dp->id_product}}">Edit</a></td>
+                                <td>
+                                    <a class="btn btn-success btn-sm" style="color:#fff;" data-toggle="modal" data-target="#edit-product-modal{{$dp->id_product}}">Edit</a>
+                                </td>
+                                <td>
+                                    {!!Form::open(['route'=>['manage.product-images', $dp->id_product], 'method'=>'GET'])!!}
+                                        {{Form::hidden('id_product',"$dp->id_product")}}
+                                        {{Form::submit('Kelola Gambar',['class'=>'btn btn-success btn-block btn-sm'])}}
+                                    {!!Form::close()!!}
+                                </td>          
                             </tr>
                             <!-- Modal Edit Tagihan Pembayaran-->
                             <div class="modal fade" id="edit-product-modal{{$dp->id_product}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

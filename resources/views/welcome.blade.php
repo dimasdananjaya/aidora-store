@@ -51,95 +51,27 @@
     <div class="container-fluid">
         <h3 class="text-center"><b>All Products</b></h3>
         <hr>
-        <div class="row">
-          <div class="col-lg-3 col-sm-6 col-xs-6">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top img-responsive" src="resources/products/product1.jpg" alt="Card image cap">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Price : Rp 10.000</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div><!--end card-->
-          </div><!--col-->
 
-          <div class="col-lg-3 col-sm-6 col-xs-6">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top img-responsive" src="resources/products/product2.jpg" alt="Card image cap">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Price : Rp 10.000</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div><!--end card-->
-          </div><!--col-->
+          <div class="products">
+            @foreach ($dataProduct as $dp)
 
-          <div class="col-lg-3">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top img-responsive" src="resources/products/product1.jpg" alt="Card image cap">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Price : Rp 10.000</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div><!--end card-->
-          </div><!--col-->
-
-          <div class="col-lg-3">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top img-responsive" src="resources/products/product2.jpg" alt="Card image cap">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Price : Rp 10.000</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div><!--end card-->
-          </div><!--col-->
-
-          <div class="col-lg-3">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top img-responsive" src="resources/products/product1.jpg" alt="Card image cap">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Price : Rp 10.000</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div><!--end card-->
-          </div><!--col-->
-
-          <div class="col-lg-3">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top img-responsive" src="resources/products/product2.jpg" alt="Card image cap">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Price : Rp 10.000</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div><!--end card-->
-          </div><!--col-->
-
-          <div class="col-lg-3">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top img-responsive" src="resources/products/product1.jpg" alt="Card image cap">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Price : Rp 10.000</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div><!--end card-->
-          </div><!--col-->
-
-          <div class="col-lg-3">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top img-responsive" src="resources/products/product2.jpg" alt="Card image cap">
-              <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Price : Rp 10.000</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div><!--end card-->
-          </div><!--col-->
-        </div><!--row-->
+                <div class="card" style="width: 18rem;">
+                  @php
+                    $product_id=$dp->id_product;
+                    $productThumbnail=DB::select(DB::raw("SELECT * FROM product_images WHERE product_images.id_product=$product_id
+                    and product_images.orders=1 LIMIT 1"));
+                  @endphp
+                  @foreach ($productThumbnail as $pt)
+                    <img class="card-img-top img-responsive" src="{{ asset('storage/product_images/'.$dp->id_product.'/'.$pt->file) }}" alt="{{$pt->file}}"></td>
+                  @endforeach
+                  <div class="card-body">
+                      <h5 class="card-title"><b>{{$dp->product_name}}</b></h5>
+                      <p class="card-text">Price : Rp. {{ number_format($dp->sell_price, 0, ',', '.') }}</p>
+                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                  </div>
+                </div><!--end card-->
+            @endforeach
+          </div><!--carousel-->
 
     </div><!--end container-->
 </section>

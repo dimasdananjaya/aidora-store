@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
+
+Route::get('/linkstorage', [App\Http\Controllers\RouteController::class, 'symlink'])->name('symlink');
+
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\RouteController::class, 'welcomePage'])->name('welcome');
 

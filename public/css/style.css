@@ -27,6 +27,28 @@ nav{
 
 /********end global****/
 
+/********* search bar *********/
+.btn-search{
+    background-color: #fca3cc;
+    color: #ffff;
+}
+
+.main-search{
+    border: none;
+    height: 3em;
+    border-radius: 1em;
+}
+
+.main-btn-search{
+    background-color: #fca3cc;
+    color: #ffff;
+    width: 12em;
+    height: 2.5em;
+    border-radius: 1em;
+}
+/********* search bar *********/
+
+
 /******************************welcome page**************************/
 /**** hero *****/
 #hero{

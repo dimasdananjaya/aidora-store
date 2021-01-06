@@ -40,6 +40,10 @@
                                 {{Form::text('sell_price','',['class'=>'form-control form-group uangBarang','placeholder'=>'','required'])}}
                                 {{Form::label('Description :')}}
                                 {{Form::textarea('description','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                {{Form::label('Instagram Link :')}}
+                                {{Form::text('instagram','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                {{Form::label('Whatsapp Link :')}}
+                                {{Form::text('whatsapp','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                 {{Form::submit('Simpan',['class'=>'btn btn-success btn-block'])}}
                             {{ Form::close() }}
                         </div>
@@ -47,13 +51,15 @@
                 </div><!--modal-dialog-->
             </div><!--modal-fade-->
 
-                <table id="tabel-barang" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%">
+                <table id="tabel-products" class="table table-bordered dt-responsive nowrap table-responsive-sm" style="width:100%">
                     <thead>
                         <th>Product ID</th>
                         <th>Product Name</th>
                         <th>Product Type</th>
                         <th>Base Price</th>
                         <th>Sell Price</th>
+                        <th>Instagram</th>
+                        <th>Whatsapp</th>
                         <th>Description</th>
                         <th>Aksi</th>
                         <th></th>
@@ -66,6 +72,8 @@
                                 <td>{{$dp->type}}</td>
                                 <td>{{ number_format($dp->sell_price, 2) }}</td>
                                 <td>{{ number_format($dp->base_price, 2) }}</td>
+                                <td>{{$dp->instagram}}</td>
+                                <td>{{$dp->whatsapp}}</td>
                                 <td>{{$dp->description}}</td>
                                 <td>
                                     <a class="btn btn-success btn-sm" style="color:#fff;" data-toggle="modal" data-target="#edit-product-modal{{$dp->id_product}}">Edit</a>
@@ -109,6 +117,10 @@
                                             {{Form::text('sell_price',$dp->sell_price,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                             {{Form::label('Desciption: ')}}
                                             {{Form::textarea('description','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                            {{Form::label('Instagram Link :')}}
+                                            {{Form::text('instagram',$dp->instagram,['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                            {{Form::label('Whatsapp Link :')}}
+                                            {{Form::text('whatsapp',$dp->whatsapp,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                             {{Form::submit('Simpan',['class'=>'btn btn-success btn-block'])}}
                                         {{ Form::close() }}
                                         </div>
@@ -125,5 +137,10 @@
             </div><!--card-body-->
         </div><!--card-->
     </div><!--container-->
+    <script>
+        $(document).ready(function() {
+            $('#tabel-products').DataTable();
+        } );
+    </script>
 </section>
 @endsection

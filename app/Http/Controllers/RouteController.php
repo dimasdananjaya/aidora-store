@@ -17,4 +17,8 @@ class RouteController extends Controller
         return view('welcome')
         ->with('dataProduct',$dataProduct);
     }
+
+    public function symlink(){
+        Artisan::call('storage:link');
+    }
 }

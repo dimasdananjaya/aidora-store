@@ -6,8 +6,15 @@
     <div class="row justify-content-center">
       <div class="col-lg-12 col-lg-8 col-xl-6 text-center">
         <img alt="image" width="200" src="resources/logo/aidora-logo.png">
-        <h1>Fashion and Beauty Products</h1>
+        <h1><b>Fashion and Beauty Products</b></h1>
       </div><!--end col-->
+      <div class="col-lg-12 mt-4">
+        <h4 class="text-center"></h4>
+        {{ Form::open(['id'=>'main-search','route' => 'product-images.store']) }}
+          {{Form::text('search-query','',['class'=>'form-control mx-2 main-search text-center','required','placeholder'=>'Find Your Style Here'])}}
+          {{Form::submit('Search',['class'=>'btn main-btn-search btn-sm mx-auto d-block mt-3'])}}
+        {!!Form::close()!!}
+      </div><!--col-lg-12-->
     </div><!--end row-->
   </div><!--end container-->
 </section>

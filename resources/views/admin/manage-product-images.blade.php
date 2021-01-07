@@ -85,6 +85,7 @@
                     </div><!--col-->
                     @endforeach
                 </div><!--carousel-->
+                <a a="/products" class="btn btn-block btn-primary">Back To Products</a> 
             </div><!--card-->
         </div><!--container-->
     </section>

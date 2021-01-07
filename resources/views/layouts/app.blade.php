@@ -51,7 +51,7 @@
 </head>
 <body>
 
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm no-gutter">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm no-gutter fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img height="80" width="80"  src="resources/logo/aidora-logo.png" alt="image" width="90" height="90">
@@ -86,9 +86,9 @@
                     </ul>
 
                     <ul class="navbar-nav ml-auto text-center">
-                        {{Form::open(['route' => 'product-images.store'])}}
+                        {{ Form::open(['id'=>'search-bar-nav','route' => 'searchResult','method'=>'GET']) }}
                             <div class="d-flex">
-                                {{Form::text('search-query','',['class'=>'form-control mx-2 text-center','required'])}}
+                                {{Form::text('term','',['class'=>'form-control mx-2 text-center','required'])}}
                                 {{Form::submit('Search',['class'=>'btn btn-search btn-sm mx-auto d-block'])}}
                             </div><!--d-flex-->
                         {!!Form::close()!!}

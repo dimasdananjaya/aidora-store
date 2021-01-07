@@ -51,7 +51,7 @@
                 </div><!--modal-dialog-->
             </div><!--modal-fade-->
 
-                <table id="tabel-products" class="table table-bordered dt-responsive nowrap table-responsive-sm" style="width:100%">
+                <table id="tabel-products" class="table table-bordered dt-responsive nowrap table-responsive" style="width:100%">
                     <thead>
                         <th>Product ID</th>
                         <th>Product Name</th>

@@ -10,8 +10,8 @@
       </div><!--end col-->
       <div class="col-lg-12 mt-4">
         <h4 class="text-center"></h4>
-        {{ Form::open(['id'=>'main-search','route' => 'product-images.store']) }}
-          {{Form::text('search-query','',['class'=>'form-control mx-2 main-search text-center','required','placeholder'=>'Find Your Style Here'])}}
+        {{ Form::open(['id'=>'main-search','route' => 'searchResult','method'=>'GET']) }}
+          {{Form::text('term','',['class'=>'form-control mx-2 main-search text-center search-box-shadow ','required','placeholder'=>'Find Your Style Here'])}}
           {{Form::submit('Search',['class'=>'btn main-btn-search btn-sm mx-auto d-block mt-3'])}}
         {!!Form::close()!!}
       </div><!--col-lg-12-->
@@ -61,7 +61,6 @@
 
           <div class="products">
             @foreach ($dataProduct as $dp)
-
                 <div class="card" style="width: 18rem;">
                   @php
                     $product_id=$dp->id_product;
@@ -74,7 +73,10 @@
                   <div class="card-body">
                       <h5 class="card-title"><b>{{$dp->product_name}}</b></h5>
                       <p class="card-text">Price : Rp. {{ number_format($dp->sell_price, 0, ',', '.') }}</p>
-                      <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <div class="d-flex justify-content-start">
+                        <a href="{{$dp->whatsapp}}" class="btn btn-sm ml-1">Order Via Whatsapp</a>
+                        <a href="{{$dp->instagram}}" class="btn btn-sm ml-1">Order Via Instagram</a>
+                      </div><!--flex-->                      
                   </div>
                 </div><!--end card-->
             @endforeach

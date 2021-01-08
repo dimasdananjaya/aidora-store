@@ -25,7 +25,10 @@
                             <div class="card-body">
                                 <h5 class="card-title"><b>{{$sr->product_name}}</b></h5>
                                 <p class="card-text">Price : Rp. {{ number_format($sr->sell_price, 0, ',', '.') }}</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                                <div class="d-flex justify-content-start">
+                                    <a href="{{$sr->whatsapp}}" class="btn btn-sm ml-1">Order Via Whatsapp</a>
+                                    <a href="{{$sr->instagram}}" class="btn btn-sm ml-1">Order Via Instagram</a>
+                                  </div><!--flex-->     
                             </div><!--card-body-->
                         </div><!--end card-->
                     @endforeach

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 
-    <link rel="icon" type="image/png" src="{{URL::asset('/images/logo/aidora-logo.png')}}">
+    <link rel="icon" type="image/png" src="{{URL::asset('resources/logo/aidora-logo.png')}}">
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -76,13 +76,14 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#"><b>Accessories</b></a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/links"><b>Links</b></a>
+                        </li>
                     </ul>
 
                     <ul class="navbar-nav ml-auto text-center">
                         <a href="#" class="mx-2"><i class="fab fa-facebook" aria-hidden="true"></i></a>
                         <a href="https://www.instagram.com/aidora.fashion/" class="mx-2"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                        <a href="#" class="mx-2"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
-                        <a href="#" class="mx-2"><i class="fab fa-google" aria-hidden="true"></i></a>
                     </ul>
 
                     <ul class="navbar-nav ml-auto text-center">
@@ -108,13 +109,12 @@
                 </div>
 
                 <div class="col-12 col-sm-6 col-md-4 mt-4 mt-sm-0 text-center text-sm-right text-md-center">
-                    <p><b>© 2021 aidorastore.store</b></p>
+                    <p><b>© 2021 aidorafashion.store</b></p>
                 </div>
 
                 <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-right">
                     <a href="#" class="mx-2"><i class="fab fa-facebook" aria-hidden="true"></i></a>
                     <a href="https://www.instagram.com/aidora.fashion/" class="mx-2"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#" class="mx-2"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
                     <a href="www.aidorafashion.store" class="mx-2"><i class="fab fa-google" aria-hidden="true"></i></a>
                 </div>
                 </div>

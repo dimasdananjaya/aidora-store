@@ -105,8 +105,7 @@
                 <div class="col-12 col-md-4 mt-4 mt-md-0 text-center text-md-right">
                     <a href="#" class="mx-2"><i class="fab fa-facebook" aria-hidden="true"></i></a>
                     <a href="https://www.instagram.com/aidora.fashion/" class="mx-2"><i class="fab fa-instagram" aria-hidden="true"></i></a>
-                    <a href="#" class="mx-2"><i class="fab fa-pinterest" aria-hidden="true"></i></a>
-                    <a href="#" class="mx-2"><i class="fab fa-google" aria-hidden="true"></i></a>
+                    <a href="www.aidorafashion.store" class="mx-2"><i class="fab fa-google" aria-hidden="true"></i></a>
                 </div>
                 </div>
             </div>

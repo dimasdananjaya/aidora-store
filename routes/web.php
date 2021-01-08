@@ -27,6 +27,9 @@ Route::get('/', [App\Http\Controllers\RouteController::class, 'welcomePage'])->n
 /**Search */
 Route::get('/search-result', [App\Http\Controllers\SearchResultController::class,'searchResult'])->name('searchResult');
 
+/**About*/
+Route::get('/links', [App\Http\Controllers\RouteController::class,'linksPage'])->name('links');
+
 /**Products */
 use App\Http\Controllers\ProductsController;
 Route::resource('/products', ProductsController::class);

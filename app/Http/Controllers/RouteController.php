@@ -16,4 +16,8 @@ class RouteController extends Controller
         return view('welcome')
         ->with('dataProduct',$dataProduct);
     }
+
+    public function linksPage(){
+        return view('about.links');
+    }
 }

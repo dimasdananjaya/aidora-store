@@ -69,6 +69,7 @@ class ProductsController extends Controller
             $dataProduct->product_name = $request->input('product_name');
             $dataProduct->sell_price = preg_replace('/\D/','',$request->input('sell_price'));
             $dataProduct->base_price = preg_replace('/\D/','',$request->input('base_price'));
+            $dataProduct->discount_price = preg_replace('/\D/','',$request->input('discount_price'));
             $dataProduct->description = $request->input('description');
             $dataProduct->instagram = $request->input('instagram');
             $dataProduct->whatsapp = $request->input('whatsapp');
@@ -130,6 +131,7 @@ class ProductsController extends Controller
             $dataProduct->product_name = $request->input('product_name');
             $dataProduct->sell_price = preg_replace('/\D/','',$request->input('sell_price'));
             $dataProduct->base_price = preg_replace('/\D/','',$request->input('base_price'));
+            $dataProduct->discount_price = preg_replace('/\D/','',$request->input('discount_price'));
             $dataProduct->description = $request->input('description');
             $dataProduct->instagram = $request->input('instagram');
             $dataProduct->whatsapp = $request->input('whatsapp');

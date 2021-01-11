@@ -38,6 +38,8 @@
                                 {{Form::text('base_price','',['class'=>'form-control form-group uangBarang','placeholder'=>'','required'])}}
                                 {{Form::label('Sell Price :')}}
                                 {{Form::text('sell_price','',['class'=>'form-control form-group uangBarang','placeholder'=>'','required'])}}
+                                {{Form::label('Discount Price :')}}
+                                {{Form::text('discount_price','',['class'=>'form-control form-group uangBarang','placeholder'=>'','required'])}}
                                 {{Form::label('Description :')}}
                                 {{Form::textarea('description','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                 {{Form::label('Instagram Link :')}}
@@ -58,6 +60,7 @@
                         <th>Product Type</th>
                         <th>Base Price</th>
                         <th>Sell Price</th>
+                        <th>Discount Price</th>
                         <th>Instagram</th>
                         <th>Whatsapp</th>
                         <th>Description</th>
@@ -72,6 +75,7 @@
                                 <td>{{$dp->type}}</td>
                                 <td>{{ number_format($dp->sell_price, 2) }}</td>
                                 <td>{{ number_format($dp->base_price, 2) }}</td>
+                                <td>{{ number_format($dp->discount_price, 2) }}</td>
                                 <td>{{$dp->instagram}}</td>
                                 <td>{{$dp->whatsapp}}</td>
                                 <td>{{$dp->description}}</td>
@@ -85,7 +89,7 @@
                                     {!!Form::close()!!}
                                 </td>          
                             </tr>
-                            <!-- Modal Edit Tagihan Pembayaran-->
+                            <!-- Modal Edit Products-->
                             <div class="modal fade" id="edit-product-modal{{$dp->id_product}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg" role="document">
                                     <div class="modal-content">
@@ -115,6 +119,8 @@
                                             {{Form::text('base_price',$dp->base_price,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                             {{Form::label('Sell Price :')}}
                                             {{Form::text('sell_price',$dp->sell_price,['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                            {{Form::label('Discount Price :')}}
+                                            {{Form::text('discount_price',$dp->discount_price,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                             {{Form::label('Desciption: ')}}
                                             {{Form::textarea('description','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                             {{Form::label('Instagram Link :')}}

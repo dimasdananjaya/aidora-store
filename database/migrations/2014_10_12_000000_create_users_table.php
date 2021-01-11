@@ -35,6 +35,7 @@ class CreateUsersTable extends Migration
             $table->string('product_name');
             $table->decimal('sell_price');
             $table->decimal('base_price');
+            $table->decimal('discount_price');
             $table->string('description');
             $table->string('status');
             $table->string('instagram');

@@ -72,10 +72,18 @@
                   @endforeach
                   <div class="card-body">
                       <h5 class="card-title"><b>{{$dp->product_name}}</b></h5>
-                      <p class="card-text">Price : Rp. {{ number_format($dp->sell_price, 0, ',', '.') }}</p>
-                      <div class="d-flex justify-content-start">
-                        <a href="{{$dp->whatsapp}}" class="btn btn-sm ml-1">Order Via Whatsapp</a>
-                        <a href="{{$dp->instagram}}" class="btn btn-sm ml-1">Order Via Instagram</a>
+                      @if ($dp->discount_price == 0)
+                        <p class="card-text">Price : Rp. {{ number_format($dp->sell_price, 0, ',', '.') }}</p>
+                        @else
+                        <div class="d-flex">
+                          <p class="card-text p-2" style="text-decoration: line-through;">Price : <br>Rp. {{ number_format($dp->sell_price, 0, ',', '.') }}</p>
+                          <p class="card-text ml-auto p-2"><b>Discount Price : <br> Rp. {{ number_format($dp->sell_price, 0, ',', '.') }}</b></p>
+                        </div><!--flex--> 
+                      @endif
+
+                      <div class="d-flex">
+                        <a href="{{$dp->whatsapp}}" class="btn btn-sm ml-1 p-2">Order Via Whatsapp</a>
+                        <a href="{{$dp->instagram}}" class="btn btn-sm ml-1 ml-auto p-2">Order Via Instagram</a>
                       </div><!--flex-->                      
                   </div>
                 </div><!--end card-->

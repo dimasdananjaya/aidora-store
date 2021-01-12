@@ -77,7 +77,7 @@
                             <a class="nav-link" href="#"><b>Accessories</b></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/links"><b>Links</b></a>
+                            <a class="nav-link" href="/links"><b>Find Our Stores</b></a>
                         </li>
                     </ul>
 

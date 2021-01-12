@@ -77,7 +77,7 @@
                         @else
                         <div class="d-flex">
                           <p class="card-text p-2" style="text-decoration: line-through;">Price : <br>Rp. {{ number_format($dp->sell_price, 0, ',', '.') }}</p>
-                          <p class="card-text ml-auto p-2"><b>Discount Price : <br> Rp. {{ number_format($dp->sell_price, 0, ',', '.') }}</b></p>
+                          <p class="card-text ml-auto p-2"><b>Discount Price : <br> Rp. {{ number_format($dp->discount_price, 0, ',', '.') }}</b></p>
                         </div><!--flex--> 
                       @endif
 

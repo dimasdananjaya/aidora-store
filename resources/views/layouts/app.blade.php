@@ -48,6 +48,24 @@
     <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '403095344129334');
+        fbq('track', 'PageView');
+        </script>
+        <noscript><img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=403095344129334&ev=PageView&noscript=1"
+        />
+    </noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 <body>
 

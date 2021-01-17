@@ -48,10 +48,11 @@
     <script type="text/javascript" charset="utf8" src="http://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" defer></script>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     
+
 </head>
 <body>
 
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm no-gutter">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm no-gutter fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     <img height="80" width="80"  src="resources/logo/aidora-logo.png" alt="image" width="90" height="90">

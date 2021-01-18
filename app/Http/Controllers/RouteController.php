@@ -11,6 +11,7 @@ class RouteController extends Controller
 {
     public function welcomePage(){
          $dataProduct=DB::table('products')
+        ->latest()
         ->get();
 
         return view('welcome')

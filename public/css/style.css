@@ -183,6 +183,14 @@ nav{
     border: solid 0.7px #1b262c;
 }
 /**** end newly-arrived *****/
+
+/************ orders button ************/
+.btn-shopee{
+    background-color: #f7442e !important;
+    border: none !important;
+    color: #ffffff !important;
+}
+/************* end orders button *********/
 /******************************welcome page**************************/
 
 /**** search result *****/

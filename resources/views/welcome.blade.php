@@ -80,7 +80,11 @@
                           <p class="card-text ml-auto p-2"><b>Discount Price : <br> Rp. {{ number_format($dp->discount_price, 0, ',', '.') }}</b></p>
                         </div><!--flex--> 
                       @endif
-
+                      
+                      <div class="d-flex">
+                        <a href="{{$dp->shopee}}" class="btn btn-block btn-shopee btn-sm ml-1 p-2 mb-3">Order Shopee</a>
+                      </div><!--row-->
+                      
                       <div class="d-flex">
                         <a href="{{$dp->whatsapp}}" class="btn btn-sm ml-1 p-2">Order Via Whatsapp</a>
                         <a href="{{$dp->instagram}}" class="btn btn-sm ml-1 ml-auto p-2">Order Via Instagram</a>

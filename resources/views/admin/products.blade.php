@@ -46,6 +46,8 @@
                                 {{Form::text('instagram','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                 {{Form::label('Whatsapp Link :')}}
                                 {{Form::text('whatsapp','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                {{Form::label('Shopee Link :')}}
+                                {{Form::text('shopee','',['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                 {{Form::submit('Simpan',['class'=>'btn btn-success btn-block'])}}
                             {{ Form::close() }}
                         </div>
@@ -63,6 +65,7 @@
                         <th>Discount Price</th>
                         <th>Instagram</th>
                         <th>Whatsapp</th>
+                        <th>Shopee</th>
                         <th>Description</th>
                         <th>Aksi</th>
                         <th></th>
@@ -78,6 +81,7 @@
                                 <td>{{ number_format($dp->discount_price, 2) }}</td>
                                 <td>{{$dp->instagram}}</td>
                                 <td>{{$dp->whatsapp}}</td>
+                                <td>{{$dp->shopee}}</td>
                                 <td>{{$dp->description}}</td>
                                 <td>
                                     <a class="btn btn-success btn-sm" style="color:#fff;" data-toggle="modal" data-target="#edit-product-modal{{$dp->id_product}}">Edit</a>
@@ -127,6 +131,8 @@
                                             {{Form::text('instagram',$dp->instagram,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                             {{Form::label('Whatsapp Link :')}}
                                             {{Form::text('whatsapp',$dp->whatsapp,['class'=>'form-control form-group','placeholder'=>'','required'])}}
+                                            {{Form::label('Shopee Link :')}}
+                                            {{Form::text('shopee',$dp->shopee,['class'=>'form-control form-group','placeholder'=>'','required'])}}
                                             {{Form::submit('Simpan',['class'=>'btn btn-success btn-block'])}}
                                         {{ Form::close() }}
                                         </div>

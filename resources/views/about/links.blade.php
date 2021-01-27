@@ -10,7 +10,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <img class="card-img-top img-responsive pb-5 d-block mx-auto" src="{{URL::asset('resources/logo/shopee.png')}}">
-                                <a class="text-center" href="https://meet.google.com/linkredirect?authuser=0&dest=https%3A%2F%2Fshopee.co.id%2Faidorafashion"><p><b>Shopee</b></p></a>
+                                <a class="text-center" href="https://shp.ee/jzpnrfk"><p><b>Shopee</b></p></a>
                             </div><!--card-body-->
                         </div><!--card-->
                     </a>

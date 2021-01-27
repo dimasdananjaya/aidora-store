@@ -136,6 +136,7 @@ class ProductsController extends Controller
             $dataProduct->description = $request->input('description');
             $dataProduct->instagram = $request->input('instagram');
             $dataProduct->whatsapp = $request->input('whatsapp');
+            $dataProduct->shopee = $request->input('shopee');
             
             $dataProduct->save();
 

@@ -58,10 +58,10 @@
     <div class="container-fluid">
         <h3 class="text-center"><b>All Products</b></h3>
         <hr>
-
-          <div class="products">
+          <div class="row">
             @foreach ($dataProduct as $dp)
-                <div class="card" style="width: 18rem;">
+            <div class="col-lg-3">
+                <div class="card" style="width: 21.3rem;">
                   @php
                     $product_id=$dp->id_product;
                     $productThumbnail=DB::select(DB::raw("SELECT * FROM product_images WHERE product_images.id_product=$product_id
@@ -91,8 +91,9 @@
                       </div><!--flex-->                      
                   </div>
                 </div><!--end card-->
+            </div><!--col-lg-4-->
             @endforeach
-          </div><!--carousel-->
+          </div><!--row-->
 
     </div><!--end container-->
 </section>

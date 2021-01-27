@@ -135,8 +135,6 @@ nav{
 }
 
 #newly-arrived .card{
-    margin-left: 1em;
-    margin-right: 1em;
     margin-top: 1em;
     margin-bottom: 1em;
     box-shadow: 0 1px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
@@ -155,34 +153,6 @@ nav{
 }
 /**** end newly-arrived *****/
 
-
-/**** #most-popular *****/
-#most-popular{
-    margin-top: 4em;
-    margin-bottom: 4em;
-}
-
-#most-popular .card{
-    margin-left: 1em;
-    margin-right: 1em;
-    margin-top: 1em;
-    box-shadow: 0 1px 10px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
-    margin-bottom: 1em;
-}
-
-#most-popular .card a{
-    background-color: #fff;
-    color: #1b262c;
-    border: solid 0.7px #1b262c;
-
-}
-
-#most-popular .card a:hover{
-    background-color: #1b262c;
-    color: #fff;
-    border: solid 0.7px #1b262c;
-}
-/**** end newly-arrived *****/
 
 /************ orders button ************/
 .btn-shopee{

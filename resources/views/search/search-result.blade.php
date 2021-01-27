@@ -25,13 +25,22 @@
                         <div class="card-body">
                             <h5 class="card-title"><b>{{$sr->product_name}}</b></h5>
                             @if ($sr->discount_price == 0)
-                            <p class="card-text">Price : Rp. {{ number_format($sr->sell_price, 0, ',', '.') }}</p>
+                                <p class="card-text">Price : Rp. {{ number_format($sr->sell_price, 0, ',', '.') }}</p>
                             @else
+                                <div class="d-flex">
+                                <p class="card-text p-2" style="text-decoration: line-through;">Price : <br>Rp. {{ number_format($sr->sell_price, 0, ',', '.') }}</p>
+                                <p class="card-text ml-auto p-2"><b>Discount Price : <br> Rp. {{ number_format($sr->discount_price, 0, ',', '.') }}</b></p>
+                                </div><!--flex--> 
+                            @endif
+                            
                             <div class="d-flex">
-                              <p class="card-text p-2" style="text-decoration: line-through;">Price : <br>Rp. {{ number_format($sr->sell_price, 0, ',', '.') }}</p>
-                              <p class="card-text ml-auto p-2"><b>Discount Price : <br> Rp. {{ number_format($sr->discount_price, 0, ',', '.') }}</b></p>
-                            </div><!--flex--> 
-                          @endif   
+                                <a href="{{$sr->shopee}}" class="btn btn-block btn-shopee btn-sm ml-1 p-2 mb-3">Order Shopee</a>
+                            </div><!--row-->
+                            
+                            <div class="d-flex">
+                                <a style="text-decoration: underline;" href="{{$sr->whatsapp}}" class="btn btn-sm ml-1 p-2">Order Via Whatsapp</a>
+                                <a style="text-decoration: underline;" href="{{$sr->instagram}}" class="btn btn-sm ml-1 ml-auto p-2">Order Via Instagram</a>
+                            </div><!--flex-->    
                         </div><!--card-body-->
                     </div><!--end card-->
                 </div><!--col-lg-4-->

@@ -142,7 +142,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--Modal Edit Tagihan Pembayaran-->   
+                            <!--Modal Edit Product-->   
                         @endforeach
                     </tbody>
                 </table>
